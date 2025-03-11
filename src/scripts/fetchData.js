@@ -1,6 +1,11 @@
 let dataUnit = null;
 
-// Fetch data from JSON file (run this once at the start of your application)
+/**
+ * Fetches data from a JSON file and assigns it to the dataUnit variable.
+ * @param {string} url - The URL of the JSON file to fetch.
+ * @returns {Promise<void>} - A promise that resolves when the data is loaded.
+ */
+
 const fetchData = async (url) => {
     try {
         const response = await fetch(url);

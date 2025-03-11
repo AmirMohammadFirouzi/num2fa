@@ -1,47 +1,29 @@
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <link rel="stylesheet" href="./../src/assets/css/reset.css">
-    <link rel="stylesheet" href="./../src/styles/main.css">
     <title>تبدیل اعداد به فارسی | Num2fa</title>
-    <style>
-        /* اضافه کردن فونت ایرانی */
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
-
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-        }
-
-        /* انیمیشن باز شدن نتیجه */
-        .result-animation {
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .result-animation.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="shortcut icon" href="/public/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/src/styles/main.css">
 </head>
 
-<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4">
-    <form class="flex flex-col gap-8 bg-white w-full max-w-md mx-auto px-6 py-8 rounded-3xl shadow-lg" action=""
-        method="get">
+<body
+    class="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4 font-vazir">
+    <!-- Form -->
+    <form class="flex flex-col gap-8 bg-white w-full max-w-md mx-auto px-6 py-8 rounded-3xl shadow-lg">
+        <!-- Header -->
         <div class="flex flex-col justify-center gap-4 text-center">
             <h1 class="text-2xl text-gray-800 font-bold">نامتوفا، تبدیل اعداد به فارسی</h1>
             <p class="text-gray-600">عدد مورد نظرتان را وارد کنید و شاهد تبدیل جادویی آن به حروف فارسی باشید! ✨</p>
         </div>
 
-        <div class="flex flex-col gap-4 justify-center items-center">
+        <!-- Input-->
+        <div class="flex flex-col gap-4">
             <input
-                class="w-full h-12 outline-none px-4 py-3 bg-white rounded-xl border border-gray-300 hover:border-purple-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-gray-800 placeholder-gray-400 transition-all ltr placeholder:text-right"
-                type="text" name="input-number" id="inputNumber" autocomplete="off" placeholder="مثال: ۱۲۳۴"
-                >
+                class="w-full outline-none h-12 px-4 py-3 rounded-xl border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 placeholder-gray-400 transition-all ltr placeholder:text-right"
+                type="text" id="inputNumber" placeholder="مثال: ۱۲۳۴" autocomplete="off">
 
             <button
                 class="w-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 rounded-2xl text-white font-medium hover:from-purple-700 hover:to-blue-700 transition-all"
@@ -50,13 +32,13 @@
             </button>
         </div>
 
-        <div class="relative">
-            <div class="result-animation px-4 py-3 bg-white rounded-xl border border-gray-200 text-gray-800 text-center transition-all"
+        <!-- Result -->
+        <div class="flex flex-col gap-4">
+            <div class="result-animation px-4 py-3 bg-white rounded-xl border border-gray-200 text-gray-800 text-center"
                 id="result"></div>
-            <!-- آیکون کپی -->
+
             <button id="copyButton"
-                class="hidden absolute right-0 transform -translate-y-1/2 p-2 text-gray-500 hover:text-purple-600 transition-all">
-                <!-- آیکون کپی SVG -->
+                class="hidden w-full flex items-center justify-center gap-2 p-2 text-gray-500 hover:text-gray-600 transition-all">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                     class="bi bi-clipboard" viewBox="0 0 16 16">
                     <path
@@ -64,9 +46,23 @@
                     <path
                         d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
                 </svg>
+                کپی نتیجه
             </button>
         </div>
     </form>
+
+    <!-- GitHub -->
+    <div class="fixed bottom-0 left-0 right-0 py-4 text-center ltr">
+        <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 text-gray-500 hover:text-purple-600 transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github"
+                viewBox="0 0 16 16">
+                <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+            </svg>
+            GitHub Page
+        </a>
+    </div>
 
     <script type="module" src="/src/index.js"></script>
 </body>
