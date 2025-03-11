@@ -1,7 +1,13 @@
+/**
+ * Converts a number string to Persian words.
+ * @param {string} numStr - The number as a string.
+ * @param {object} dataUnit - An object containing Persian words for numbers, ranks, and units.
+ * @returns {string} - The number expressed in Persian words.
+ */
 function numberToPersianWords(numStr, dataUnit) {
     // Validate input
     if (typeof numStr !== 'string') {
-        return `لطفاً یک عدد معتبر وارد کنید.`;
+        return 'لطفاً یک عدد معتبر وارد کنید.';
     }
 
     // Handle negative numbers
@@ -9,7 +15,7 @@ function numberToPersianWords(numStr, dataUnit) {
         return `منفی ${numberToPersianWords(numStr.slice(1), dataUnit)}`;
     }
 
-    // Handle decimal numbers (ممیز با واحد پویا)
+    // Handle decimal numbers
     if (numStr.includes('.')) {
         const [integerPart, decimalPart] = numStr.split('.');
         const integerWords = numberToPersianWords(integerPart, dataUnit);
@@ -50,7 +56,11 @@ function numberToPersianWords(numStr, dataUnit) {
     words = words.trim().replace(/ و $/, '');
     return words;
 
-    // Convert a 3-digit chunk to Persian words
+    /**
+     * Converts a 3-digit chunk to Persian words.
+     * @param {number} chunk - A 3-digit number.
+     * @returns {string} - The chunk expressed in Persian words.
+     */
     function convertChunk(chunk) {
         let chunkWords = '';
 
