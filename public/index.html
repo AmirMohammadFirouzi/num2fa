@@ -1,0 +1,74 @@
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link rel="stylesheet" href="./../src/assets/css/reset.css">
+    <link rel="stylesheet" href="./../src/styles/main.css">
+    <title>تبدیل اعداد به فارسی | Num2fa</title>
+    <style>
+        /* اضافه کردن فونت ایرانی */
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        /* انیمیشن باز شدن نتیجه */
+        .result-animation {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .result-animation.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-4">
+    <form class="flex flex-col gap-8 bg-white w-full max-w-md mx-auto px-6 py-8 rounded-3xl shadow-lg" action=""
+        method="get">
+        <div class="flex flex-col justify-center gap-4 text-center">
+            <h1 class="text-2xl text-gray-800 font-bold">نامتوفا، تبدیل اعداد به فارسی</h1>
+            <p class="text-gray-600">عدد مورد نظرتان را وارد کنید و شاهد تبدیل جادویی آن به حروف فارسی باشید! ✨</p>
+        </div>
+
+        <div class="flex flex-col gap-4 justify-center items-center">
+            <input
+                class="w-full h-12 outline-none px-4 py-3 bg-white rounded-xl border border-gray-300 hover:border-purple-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-gray-800 placeholder-gray-400 transition-all ltr placeholder:text-right"
+                type="text" name="input-number" id="inputNumber" autocomplete="off" placeholder="مثال: ۱۲۳۴"
+                >
+
+            <button
+                class="w-full bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 rounded-2xl text-white font-medium hover:from-purple-700 hover:to-blue-700 transition-all"
+                type="submit" id="convert">
+                تبدیل به حروف 🚀
+            </button>
+        </div>
+
+        <div class="relative">
+            <div class="result-animation px-4 py-3 bg-white rounded-xl border border-gray-200 text-gray-800 text-center transition-all"
+                id="result"></div>
+            <!-- آیکون کپی -->
+            <button id="copyButton"
+                class="hidden absolute right-0 transform -translate-y-1/2 p-2 text-gray-500 hover:text-purple-600 transition-all">
+                <!-- آیکون کپی SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+                    <path
+                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+                </svg>
+            </button>
+        </div>
+    </form>
+
+    <script type="module" src="/src/index.js"></script>
+</body>
+
+</html>

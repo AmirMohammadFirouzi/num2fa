@@ -1,0 +1,16 @@
+{
+  "name": "num2fa",
+  "version": "1.0.0",
+  "description": "Convert numbers to Persian words: A simple and practical web tool that transforms numbers into their written Persian equivalents. This project is designed using Tailwind CSS and is easily extendable.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/styles/main.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "type": "module"
+}
