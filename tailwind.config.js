@@ -1,6 +1,6 @@
 // tailwind.config.js
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./public/**/*.html"],
+  content: ["/**/*.{html,js}"],
   theme: {
     extend: {
       fontFamily: {
